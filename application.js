@@ -6,7 +6,7 @@ var cors = require('cors');
 // list the endpoints which you want to make securable here
 var securableEndpoints;
 // fhlint-begin: securable-endpoints
-securableEndpoints = ['/db'];
+securableEndpoints = ['/database'];
 // fhlint-end
 
 var app = express();
@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(mbaasExpress.fhmiddleware());
 
 // fhlint-begin: custom-routes
-app.use('/db', require('./lib/db.js')());
+app.use('/database', require('./lib/database.js')());
 // fhlint-end
 
 // Important that this is last!
